@@ -34,7 +34,7 @@ public extension ComposableExtension where Base: UINavigationController {
         
         // Retain until lifetime is released or cancelled
         lifetime.observeEnded {
-            _ = [base, delegate]
+            _ = delegate
         }
         
         let rootSegment = makeRootSegment(store)
