@@ -2,9 +2,8 @@
 
 The [ComposableArchitecture](https://github.com/pointfreeco/swift-composable-architecture) (TCA) library provides a way of structuring Swift code with the Redux-pattern. It is highly optimized for SwiftUI, and works really well there. But UIKit is still highly relevant, and, as-is, it does not really lend itself to the Redux pattern. UIKit is not declarative like SwiftUI, but imperative. 
 
-This Swift package provides tools that enable you to build a bridge between TCA and UIKit.
-
-As of now, this is an early beta which provides the bridge to `UINavigationController`
+This Swift package provides tools that enable you to build a bridge between TCA and UIKit. 
+Right now,  `UINavigationController` is supported.
 
 ## Usage
 
@@ -58,8 +57,8 @@ The root segment could look like this:
 ```swift
 private func makeUnauthenticatedRootSegment(
     store: Store<UnauthenticatedState, UnauthenticatedAction>
-) -> UnauthenticatedNavSegment {
-    UnauthenticatedNavSegment(
+) -> NavSegment<UnauthenticatedNavSegmentID> {
+    NavSegment(
         id: .root,
         store: store,
         viewControllers: { store in
@@ -98,4 +97,4 @@ However, you can return as many viewControllers (`NavSegment.ViewController`) as
 
 ## 0.1.0
 
-- Added `UINavigationController` bridge (`NavigationCoordinator`)
+- Added `UINavigationController` bridge (`UINavigationController.composable.bind(...)`)
