@@ -14,7 +14,7 @@ let package = Package(
         .package(
             name: "swift-composable-architecture",
             url: "https://github.com/pointfreeco/swift-composable-architecture.git",
-            from: "0.28.1"
+            from: "0.33.1"
         ),
         .package(
             name: "CombineProperty",
